@@ -1,0 +1,25 @@
+/* All of this is going to have to be redone using bootstrap's columnns */
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftContainer {
+  width: 60%;
+}
+
+.directionsForm {
+  border: 1px solid black;
+}
+
+.mapContainer {
+  width: 100%;
+  border: 1px solid black;
+}
+
+.directionsBox {
+  width: 30%;
+  /* float: right; */
+  border: 1px solid black;
+  text-align: center;
+}
