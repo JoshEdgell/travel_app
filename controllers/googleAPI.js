@@ -8,7 +8,7 @@ const request = require('request');
 
 // We're sending a post so that we can get our driving directions.
 router.post('/', (req, res) => {
-    // Receive req.body. 
+    // Receive req.body.
     // {
     // origin: "103+Clearcreek+Ct,+Cary,+NC+27513",     (a string that contains spaces)
     // destination: "807+West+Markham+Ave,+Durham,+NC+27701"     (a string that contains spaces)
@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
     // let directionsObject = req.body; // AT THE END, THIS IS WHAT WE WANT.
 
     let directionsObject = {
-        origin: "103+Clearcreek+Ct,+Cary,+NC+27513",  
+        origin: "103+Clearcreek+Ct,+Cary,+NC+27513",
         destination: "807+West+Markham+Ave,+Durham,+NC+27701"
         }
 
@@ -27,11 +27,13 @@ router.post('/', (req, res) => {
         // console.log('error:', error); // Print the error if one occurred
         // console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
         console.log('body:', body); // Print the HTML for the Google homepage.
+        //Something is sending the body back as a string, rather than a json object - we need to pick apart either the response or the body to figure out where to get what we want.
+        //Maybe it's as simple as figuring out how to turn a string into an object
         res.json(body);
       });
 
 // NOTES
-// 
+//
 
 
 
@@ -47,7 +49,7 @@ router.post('/', (req, res) => {
 
     //     // We will receive a response.
     //     .on('response', function (response, error, body) { // make sure we respond with json object
-            
+
     //         console.log(response.request);
     //         res.json(response);
 
