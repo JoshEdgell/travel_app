@@ -10,6 +10,7 @@ app.controller('MainController', ['$http', function($http){
     //   origin: this.originAddress.replace(/ /g, '+'),
     //   destination: this.destinationAddress.replace(/ /g, '+')
     // }
+    
     let directionsObject = {
         origin: "103+Clearcreek+Ct,+Cary,+NC+27513",
         destination: "807+West+Markham+Ave,+Durham,+NC+27701"
@@ -26,5 +27,6 @@ app.controller('MainController', ['$http', function($http){
         console.log(error, 'error from this.searchDirections');
       }
     )
+
   };
 }])
