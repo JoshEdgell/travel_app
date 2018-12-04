@@ -25,18 +25,45 @@ router.post('/', (req, res) => {
         // Need to get this info to the front end.
 
         // console.log(body);
+        // console.log(body.status);
+let myPolyline = "";
+for(let i = 2000; i<2250; i++){
+    myPolyline += body[i];
+}
+console.log(myPolyline);
+// console.log(body[9]+body[10]);
+
+        // console.log(Object.keys(body));
+        // console.log(Object.values(body));
+        // console.log(Object.getOwnPropertyNames(body));
+
+        // var input = JSON.parse(JSON.parse(JSON.stringify(body.routes[0])));
+
+        // const input = body.routes[0];
+
+        // console.log(input);
+
+
+
+
         // console.log(body.routes);
         // console.log(body.status);
         // console.log(body.routes[0].legs[0].steps[0].polyline.points);
 
-        let newbody = body;
-        // console.log(newbody);
+        // var object2 = new Object();
+        // object2 = body;
+        // console.log(object2);
+        // console.log(object2.geocoded_waypoints);
 
+        // let newbody = {};
+        // newbody = body;
+        // console.log(newbody);
+        // console.log(newbody.routes[0]);
         // setTimeout(function(){console.log(body.routes[0]); }, 3000);
 
         // setTimeout(function(){console.log("hello"); }, 3000);
 
-        // console.log(newbody.routes);
+        // console.log(newbody.routes[0]);
         // console.log(newbody.routes[0].legs[0].steps[0].polyline.points);
 
         // console.log(body.keys(routes[0]));
@@ -48,7 +75,6 @@ router.post('/', (req, res) => {
         // console.log(req);
 
     });
-
 
     // NOTE - WE DO NOT NEED ANYTHING THAT IS COMMENTED OUT BELLOW.
 
