@@ -7,38 +7,31 @@ const request = require('request');
 //   What I need here is express documentation.
 
 // We're sending a post so that we can get our driving directions.
-router.post('/', (req, res) => {
+router.get('/', (req, res) => {
     // Receive req.body. 
     // {
     // origin: "103+Clearcreek+Ct,+Cary,+NC+27513",     (a string that contains spaces)
     // destination: "807+West+Markham+Ave,+Durham,+NC+27701"     (a string that contains spaces)
     // }
+    // let directionsObject = {
+    //     origin: "103+Clearcreek+Ct,+Cary,+NC+27513",  
+    //     destination: "807+West+Markham+Ave,+Durham,+NC+27701"
+    //     }
 
-    // let directionsObject = req.body; // AT THE END, THIS IS WHAT WE WANT.
-
-    let directionsObject = {
-        origin: "103+Clearcreek+Ct,+Cary,+NC+27513",  
-        destination: "807+West+Markham+Ave,+Durham,+NC+27701"
-        }
-
-    // We want to make a call to the google api.
+    // let directionsObject = req.body; 
 
     request('https://maps.googleapis.com/maps/api/directions/json?origin=' + directionsObject.origin + '&destination=' + directionsObject.destination + '&key=' + process.env.GOOGLE_KEY, function (error, response, body) {
-        // console.log('error:', error); // Print the error if one occurred
-        // console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-        console.log('body:', body); // Print the HTML for the Google homepage.
+        // console.log('error:', error); // Prints the error if one occurred.
+        // console.log('statusCode:', response && response.statusCode); // Prints the response status code if a response was received.
+        // console.log('body:', body); // Prints the HTML for the Google homepage.
         res.json(body);
+        let directionsObject = req.body; // AT THE END, THIS IS WHAT WE WANT.
       });
 
-// NOTES
-// 
 
-
-
-
-
-
-    // request
+// NOTE - WE DO NOT NEED ANYTHING THAT IS COMMENTED OUT BELLOW.
+ 
+ // request
     //     // .get('https://maps.googleapis.com/maps/api/directions/json?origin=' + origin + '&destination=' + destination + '&key=' + apiKey)
 
     //     // .get('https://maps.googleapis.com/maps/api/directions/json?origin=' + directionsObject.origin + '&destination=' + directionsObject.destination + '&key=' + "AIzaSyDHBfRF4V8XyVyxPHXfgsQUkeIYGNp4ooI")
