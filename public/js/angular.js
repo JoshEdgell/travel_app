@@ -10,7 +10,10 @@ app.controller('MainController', ['$http', function($http){
       origin: this.originAddress.replace(/ /g, '+'),
       destination: this.destinationAddress.replace(/ /g, '+')
     }
-    console.log(directionsObject);
+    // console.log(directionsObject, "New Directions");
+    // console.log("New Directions");
+    
+    // console.log(directionsObject);
     // $http({
     //   method: 'POST',
     //   url: '/directions',
