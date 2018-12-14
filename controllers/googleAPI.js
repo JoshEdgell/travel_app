@@ -22,8 +22,6 @@ router.post('/', (req, res) => {
         let route = JSON.parse(body);
         res.json(route);
     });
-
-
 });
 
 module.exports = router;
