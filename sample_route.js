@@ -657,6 +657,10 @@ const route = {
    "status" : "OK"
 }
 
+export function hello(){
+  return route
+}
+
 // Lat/Lng Starting Location:
 route.routes[0].legs[0].start_location
 
@@ -675,3 +679,5 @@ route.routes[0].legs[0].steps[0].end_location
 
 // Duration (in seconds) of a particular step (in this case, step 0)
 route.routes[0].legs[0].steps[0].duration.value
+
+module.exports = route;

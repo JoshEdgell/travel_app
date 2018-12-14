@@ -4,9 +4,15 @@ const request = require('request');
 
 // We're sending this post so that we can display the map in the website.
 router.post('/', (req, res) => {
+<<<<<<< HEAD
 
     // let directionsObject = {
     //     origin: "103+Clearcreek+Ct,+Cary,+NC+27513",
+=======
+    
+    // let directionsObject = {
+    //     origin: "103+Clearcreek+Ct,+Cary,+NC+27513",  
+>>>>>>> 3bc6eaca55fe2c06f5602182f130402d0cbacfd4
     //     destination: "807+West+Markham+Ave,+Durham,+NC+27701"
     //     }
 
@@ -15,7 +21,11 @@ router.post('/', (req, res) => {
     // from:https://developers.google.com/maps/documentation/embed/start
     // <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=' + directionsObject.origin + '&destination=' + directionsObject.destination + '&key=' + process.env.GOOGLE_KEY" allowfullscreen></iframe>
 
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 3bc6eaca55fe2c06f5602182f130402d0cbacfd4
     request('https://www.google.com/maps/embed/v1/directions?origin=' + directionsObject.origin + '&destination=' + directionsObject.destination + '&key=' + process.env.GOOGLE_KEY, function (error, response, body) {
         // console.log('error:', error); // Print the error if one occurred
         // console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
@@ -25,4 +35,8 @@ router.post('/', (req, res) => {
     })
 });
 
+<<<<<<< HEAD
 module.exports = router;
+=======
+module.exports = router;
+>>>>>>> 3bc6eaca55fe2c06f5602182f130402d0cbacfd4
