@@ -19,7 +19,6 @@ router.post('/', (req, res) => {
 
     // We want to make a call to the google api.
     request('https://maps.googleapis.com/maps/api/directions/json?origin=' + directionsObject.origin + '&destination=' + directionsObject.destination + '&key=' + process.env.GOOGLE_KEY, function (error, response, body) {
-
         let route = JSON.parse(body);
         res.json(route);
     });
