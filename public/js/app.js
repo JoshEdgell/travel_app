@@ -59,7 +59,8 @@ const route = {
                         "lat" : 39.645807,
                         "lng" : -80.8560969
                      },
-                     "html_instructions" : "Head \u003cb\u003esouth\u003c/b\u003e on \u003cb\u003e5th St\u003c/b\u003e toward \u003cb\u003eBarr St\u003c/b\u003e",
+                     "html_instructions" : "Head \u003cb\u003esouth\u003c/s\u003e on \u003cb\u003e5th St\u003c/b\u003e toward \u003cb\u003eBarr St\u003c/b\u003e",
+                     // "html_instructions" : "Head <b>south</b> on <b>5th St</b> toward <b>Barr St</b>",
                      "polyline" : {
                         "points" : "{i~pFpeolNP@"
                      },
@@ -660,13 +661,14 @@ const app           = angular.module('WeatherApp', []);
 
 app.controller('MainController', ['$http', function($http){
   const controller = this;
-  this.word = 'poop';
+  this.currentRoute = route;
+  this.currentDirections = [];
   this.searchDirections = function(){
     // let directionsObject = {
     //   origin: this.originAddress.replace(/ /g, '+'),
     //   destination: this.destinationAddress.replace(/ /g, '+')
     // }
-    
+
     let directionsObject = {
         origin: "103+Clearcreek+Ct,+Cary,+NC+27513",
         destination: "807+West+Markham+Ave,+Durham,+NC+27701"
@@ -686,4 +688,11 @@ app.controller('MainController', ['$http', function($http){
     )
 
   };
-}])
+  this.stripDirectionHTML = function(steps){
+    // This method expects the array value from the 'steps' key in the ResponseObject (route.routes[0].legs[0].steps) and parses out the html tags of the html_instructions.  I was unable to get 'ngSanitize' to work and don't understand $scope well enough to get it to work via angularJS's ng-bind-html.
+    for (let i = 0; i < steps.length; i++) {
+      this.currentDirections.push(steps[i].html_instructions.replace(/\<(.*?)\>/g,''));
+    }
+  };
+  this.stripDirectionHTML(this.currentRoute.routes[0].legs[0].steps);
+}]);
