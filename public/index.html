@@ -13,8 +13,28 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
 
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
   </head>
   <body ng-controller="MainController as ctrl">
+
+    <div id="map"></div>
+    <button ng-click="ctrl.makeMap()">Make Map</button>
+
+
+
     <header>
       <h1>
         Josh & Jamie's Terrific Weather App
