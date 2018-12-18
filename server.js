@@ -17,8 +17,8 @@ app.get('/', (req,res)=>{
 const directionsController = require('./controllers/googleAPI.js');
 app.use('/directions', directionsController);
 
-// const weatherController = require('./controllers/weather.js')
-// app.use('/weather', weatherController)
+const weatherController = require('./controllers/weather.js')
+app.use('/weather', weatherController)
 
 const port = 3000;
 
