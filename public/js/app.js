@@ -695,29 +695,15 @@ app.controller('MainController', ['$http', function($http){
     }
   };
   // this.stripDirectionHTML(this.currentRoute.routes[0].legs[0].steps);
-  this.initMap = function(){
-    console.log('what up?');
+  this.getMap = function(){
+    
     $http({
       method: 'GET',
-      url: 'directions/getmap'
-    }).then(
-      function(response){
-        console.log(response.data.body);
-        controller.mapper = response.data.body;
-        // controller.object = response.body.data;
-        // console.log(controller.object);
-      }, function(error){
-        console.log(error);
-      }
-    )
-  };
-  this.makeMap = function(){
-    var map;
-    function initMap() {
-      map = new controller.mapper.google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644},
-        zoom: 8
-      });
+      url: '/dummy/getMap'
+    }).then(function(response){
+      console.log(response.data)
+    }, function(error){
+      console.log(error, "error")
+    })
   }
-  this.initMap();
 }]);
