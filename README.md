@@ -1,11 +1,5 @@
 # The name of our app.
 
-What it does.
+## Currently on the 'scratchJamie' branch
 
-Who it's for.
-
-Who has built it.
-
-How to use it.
-
-How it works.
+I am using this branch as a locationto play with code before commiting it to a dedicated branch.
