@@ -19,6 +19,10 @@
     </style>
   </head>
   <body>
+
+<h1>Now to incorporate dotenv</h1>
+
+    
     <div id="map"></div>
     <script>
       var map;
@@ -29,7 +33,25 @@
         });
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
-    async defer></script> <!-- This worked with my API key. However I don't want to upload my API key to GitHub. So I am going to now work on replicating this with the DotEnv dependency. -->
+    
+
+   <!-- // We want to make a call to the google api.
+    request('https://maps.googleapis.com/maps/api/directions/json?origin=' + directionsObject.origin + '&destination=' + directionsObject.destination + '&key=' + process.env.GOOGLE_KEY, function (error, response, body) {
+        let route = JSON.parse(body);
+        res.json(route);
+    }); -->
+
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key= + process.env.GOOGLE_KEY, function (error, response, body) {
+      let route = JSON.parse(body);
+      res.json(route);
+  })&callback=initMap"
+    async defer></script> -->
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=GOOGLE_KEY&callback=initMap"
+    async defer></script>
+
+     <!-- This worked with my API key. However I don't want to upload my API key to GitHub. So I am going to now work on replicating this with the DotEnv dependency. -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+    async defer></script> -->
   </body>
 </html>
